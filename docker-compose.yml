@@ -65,6 +65,7 @@ services:
     environment:
       - POSTGRES_USER=saleor
       - POSTGRES_PASSWORD=saleor
+      - COMPOSE_HTTP_TIMEOUT=10000
 
   redis:
     image: library/redis:5.0-alpine
