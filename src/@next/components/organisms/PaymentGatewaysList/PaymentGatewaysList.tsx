@@ -1,16 +1,18 @@
-import React from "react";
-
-import { ErrorMessage, Radio } from "@components/atoms";
-import { PROVIDERS } from "@temp/core/config";
+import * as S from "./styles";
 
 import {
   BraintreePaymentGateway,
   DummyPaymentGateway,
   StripePaymentGateway,
+  TapPaymentGateway
 } from "..";
-import * as S from "./styles";
-import { IProps } from "./types";
+import { ErrorMessage, Radio } from "@components/atoms";
 
+import { IProps } from "./types";
+import { PROVIDERS } from "@temp/core/config";
+import React from "react";
+
+//     const { dataError } = await createPayment(gateway, token, cardData);
 /**
  * Payment Gateways list
  */
@@ -94,6 +96,30 @@ const PaymentGatewaysList: React.FC<IProps> = ({
                 )}
               </div>
             );
+
+            case PROVIDERS.TAP.label:
+              return (
+                <div key={index}>
+                  <S.Tile checked={checked}>
+                    <Radio
+                      data-cy="checkoutPaymentGatewayTapInput"
+                      name="payment-method"
+                      value="tap"
+                      checked={checked}
+                      onChange={() =>
+                        selectPaymentGateway && selectPaymentGateway(id)
+                      }
+                      customLabel={true}
+                    >
+                      <span data-cy="checkoutPaymentGatewayTapName">
+                        {name}
+                      </span>
+                    </Radio>
+                  </S.Tile>
+                    <TapPaymentGateway open={checked}
+                    />
+                </div>
+              );
 
           case PROVIDERS.STRIPE.label:
             return (

@@ -1,13 +1,11 @@
-import * as React from "react";
-import Media from "react-responsive";
-import { RouteComponentProps, withRouter } from "react-router";
-
-import { useUserDetails } from "@sdk/react";
-import { smallScreen } from "@styles/constants";
-import AddressBook from "../../account/AddressBook/AddressBook";
-
 import "./scss/index.scss";
 
+import * as React from "react";
+
+import { AccountMenu, AccountMenuMobile } from "@components/molecules";
+import { AccountTab, OrdersHistory } from "@pages";
+import { Breadcrumbs, Loader } from "../../components";
+import { RouteComponentProps, withRouter } from "react-router";
 import {
   accountUrl,
   addressBookUrl,
@@ -15,9 +13,10 @@ import {
   orderHistoryUrl,
 } from "../../app/routes";
 
-import { AccountMenu, AccountMenuMobile } from "@components/molecules";
-import { AccountTab, OrdersHistory } from "@pages";
-import { Breadcrumbs, Loader } from "../../components";
+import AddressBook from "../../account/AddressBook/AddressBook";
+import Media from "react-responsive";
+import { smallScreen } from "@styles/constants";
+import { useUserDetails } from "@sdk/react";
 
 const returnTab: any = (path: string, userDetails, history) => {
   let tabContent = <></>;

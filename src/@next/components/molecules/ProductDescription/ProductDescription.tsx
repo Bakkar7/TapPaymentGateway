@@ -1,9 +1,8 @@
-import React from "react";
-
-import { RichTextContent } from "@components/atoms";
-
 import * as S from "./styles";
+
 import { IProps } from "./types";
+import React from "react";
+import { RichTextContent } from "@components/atoms";
 
 enum TABS {
   DESCRIPTION,
@@ -16,7 +15,6 @@ export const ProductDescription: React.FC<IProps> = ({
   attributes,
 }: IProps) => {
   const [activeTab, setActiveTab] = React.useState<TABS>(TABS.DESCRIPTION);
-
   return (
     <S.Wrapper>
       <S.Tabs>

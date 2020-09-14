@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import * as S from "./styles";
 
-import { Checkbox } from "@components/atoms";
-import { filterNotEmptyArrayItems } from "@utils/misc";
+import React, { useEffect, useState } from "react";
 
 import { AddressForm } from "../AddressForm";
 import { AddressGridSelector } from "../AddressGridSelector";
+import { Checkbox } from "@components/atoms";
 import { DiscountForm } from "../DiscountForm";
 import { IDiscountFormData } from "../DiscountForm/types";
-import { PaymentGatewaysList } from "../PaymentGatewaysList";
-
-import * as S from "./styles";
 import { IProps } from "./types";
+import { PaymentGatewaysList } from "../PaymentGatewaysList";
+import { filterNotEmptyArrayItems } from "@utils/misc";
 
 /**
  * Payment options used in checkout.
@@ -142,7 +141,7 @@ const CheckoutPayment: React.FC<IProps> = ({
           data-cy="checkoutPaymentPromoCodeCheckbox"
           name="payment-promo-code"
           checked={showPromoCodeForm}
-          onChange={handleChangeShowPromoCodeForm}
+          onChange={handleChangeShowPromoCodeForm} 
         >
           Do you have a gift card voucher or discount code?
         </Checkbox>

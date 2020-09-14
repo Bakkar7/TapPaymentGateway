@@ -1,4 +1,4 @@
-import { generatePageUrl } from "./utils";
+import { generatePageUrl } from './utils';
 
 export const BASE_URL = "/";
 export const PRODUCTS_PER_PAGE = 6;
@@ -14,6 +14,9 @@ export const PROVIDERS = {
     href: "https://js.stripe.com/v3/",
     label: "Stripe",
   },
+  TAP: {
+    label: 'Tap'
+  }
 };
 export const STATIC_PAGES = [
   {
