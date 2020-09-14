@@ -146,9 +146,10 @@ EMAIL_USE_TLS = email_config["EMAIL_USE_TLS"]
 EMAIL_USE_SSL = email_config["EMAIL_USE_SSL"]
 
 # If enabled, make sure you have set proper storefront address in ALLOWED_CLIENT_HOSTS.
-ENABLE_ACCOUNT_CONFIRMATION_BY_EMAIL = get_bool_from_env(
-    "ENABLE_ACCOUNT_CONFIRMATION_BY_EMAIL", True
-)
+ENABLE_ACCOUNT_CONFIRMATION_BY_EMAIL = True
+# get_bool_from_env(
+#     "ENABLE_ACCOUNT_CONFIRMATION_BY_EMAIL", True
+# )
 
 ENABLE_SSL = get_bool_from_env("ENABLE_SSL", False)
 
@@ -513,6 +514,7 @@ PLUGINS = [
     "saleor.plugins.vatlayer.plugin.VatlayerPlugin",
     "saleor.plugins.webhook.plugin.WebhookPlugin",
     "saleor.payment.gateways.dummy.plugin.DummyGatewayPlugin",
+    "saleor.payment.gateways.tap.plugin.TapGatewayPlugin",
     "saleor.payment.gateways.stripe.plugin.StripeGatewayPlugin",
     "saleor.payment.gateways.braintree.plugin.BraintreeGatewayPlugin",
     "saleor.payment.gateways.razorpay.plugin.RazorpayGatewayPlugin",
